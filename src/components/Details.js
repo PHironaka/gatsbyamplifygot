@@ -2,9 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { getCurrentUser } from '../utils/auth'
 
-
-// const Posts = data.listPosts.items;
-
 const Home = () => {
   const user = getCurrentUser()
   console.log('user:', user)
@@ -12,6 +9,7 @@ const Home = () => {
     <div>
       <h1>Profile Details</h1>
       <p>Email: {user.email}</p>
+      <p>Phone: {user.phone_number}</p>
       <p>Username: {user.username}</p>
       <Link to="/app/home">Home</Link>
     </div>

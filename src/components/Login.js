@@ -7,7 +7,7 @@ import { Auth } from 'aws-amplify'
 
 class Login extends React.Component {
   state = {
-    email: ``,
+    username: ``,
     password: ``,
     error: ``
   }
@@ -19,13 +19,13 @@ class Login extends React.Component {
   }
 
   login = async() => {
-    const { email, password } = this.state
+    const { username, password } = this.state
     try {
-      await Auth.signIn(email, password)
+      await Auth.signIn(username, password)
       const user = await Auth.currentAuthenticatedUser()
       const userInfo = {
         ...user.attributes,
-        email: user.email
+        username: user.username
       }
       setUser(userInfo)
       navigate("/app/home")
@@ -44,9 +44,9 @@ class Login extends React.Component {
         <div style={styles.formContainer}>
          <input
             onChange={this.handleUpdate}
-            placeholder='email'
-            name='email'
-            value={this.state.email}
+            placeholder='Username'
+            name='username'
+            value={this.state.username}
             style={styles.input}
           />
           <input
