@@ -15,7 +15,6 @@ const IndexPage = () => (
     <Link to="/app/login">Sign In</Link><br />
     <Link to="/app/home">Home</Link><br />
     <Link to="/app/profile">Your profile</Link>
-    <Link to="/app/characters">Your characters</Link>
   </Layout>
 )
 
