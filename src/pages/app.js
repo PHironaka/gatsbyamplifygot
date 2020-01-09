@@ -1,7 +1,7 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import Layout from '../components/layout'
-import Profile from '../components/Details'
+import Details from "../components/Details"
 import Characters from '../components/Characters'
 import Login from '../components/Login'
 import SignUp from '../components/SignUp'
@@ -11,7 +11,7 @@ const App = () => (
   <Layout>
     <Router>
       <PrivateRoute path="/app/characters" component={Characters} />
-      <PrivateRoute path="/app/profile" component={Profile} />
+      <PrivateRoute path="/app/profile" component={Details} />
       <Login path="/app/login" />
       <SignUp path="/app/signup" />
     </Router>

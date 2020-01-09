@@ -1,42 +1,57 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
+import { Link } from 'gatsby'
+
+import { navigate } from '@reach/router'
+
+import { logout, isLoggedIn } from "../utils/auth"
+import { Auth } from 'aws-amplify'
 
 const Header = ({ siteTitle }) => (
-  <header
+  <div
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: 'rebeccapurple',
+      marginBottom: '1.45rem',
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
+        margin: '0 auto',
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: '1.45rem 1.0875rem',
       }}
     >
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+          style={styles.headerTitle}
         >
           {siteTitle}
         </Link>
       </h1>
+      {
+        isLoggedIn() && (
+          <p
+            onClick={
+              () => Auth.signOut().then(logout(() => navigate('/app/login'))).catch(err => console.log('eror:', err))
+            }
+            style={styles.link}
+          >Sign Out</p>
+        )
+      }
     </div>
-  </header>
+  </div>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+const styles = {
+  headerTitle: {
+    color: 'white',
+    textDecoration: 'none',
+  },
+  link: {
+    cursor: 'pointer',
+    color: 'white',
+    textDecoration: 'underline'
+  }
 }
 
 export default Header
