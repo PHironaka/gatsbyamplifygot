@@ -8,7 +8,13 @@
             "DeploymentBucketName": "amplify-myamplifygatsbysite-dev-205140-deployment",
             "UnauthRoleName": "amplify-myamplifygatsbysite-dev-205140-unauthRole",
             "StackName": "amplify-myamplifygatsbysite-dev-205140",
-            "StackId": "arn:aws:cloudformation:us-west-2:312838516316:stack/amplify-myamplifygatsbysite-dev-205140/be58ed00-329b-11ea-9b7e-0a25a13ca77a"
+            "StackId": "arn:aws:cloudformation:us-west-2:312838516316:stack/amplify-myamplifygatsbysite-dev-205140/be58ed00-329b-11ea-9b7e-0a25a13ca77a",
+            "AmplifyAppId": "ddkk4gy1ayi3g"
+        },
+        "categories": {
+            "auth": {
+                "myamplifygatsbysite9393ae55": {}
+            }
         }
     }
 }

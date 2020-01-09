@@ -17,5 +17,11 @@
 			}
 		}
 	},
-	"auth": {}
+	"auth": {
+		"myamplifygatsbysite9393ae55": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
 }
